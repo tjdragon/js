@@ -95,3 +95,34 @@ body {
 	border-radius: 50%;
 	box-shadow: inset 0px 0px 5px 5px #0000ff;
 }
+
+.pulsing .pulse {
+	animation-name: pulsing;
+	animation-duration: 0.1s;
+	animation-timing-function: ease-in;
+	animation-iteration-count: 1;
+	animation-direction: normal;
+}
+
+.circle-pulse {
+	.filter: url(#filter-blur);
+	animation-name: pulsing;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-direction: normal;
+}
+
+@keyframes pulsing {
+	0% {
+		opacity: 0;
+		transform: scale(0);
+	}
+	50% {
+		opacity: 1;
+		transform: scale(1);
+	}
+	100% {
+		opacity: 0;
+		transform: scale(5);
+	}
+}
